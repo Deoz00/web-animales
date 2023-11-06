@@ -1,0 +1,55 @@
+.nav{
+    /* background: rgb(27,177,65);
+    background: linear-gradient(191deg, rgba(27,177,65,1) 1%, rgba(27,129,32,1) 100%); */
+    background-color: transparent;
+
+}
+.white{
+    color: white;
+}
+.white:hover{
+    color: white;
+}
+
+  .buscadorI{
+
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad (0.5) */
+    z-index: -1; /* Coloca la superposición detrás del contenido */
+  }
+
+  .card{
+    
+    background-color: #fafafa10!important;
+    border-radius: 1px !important;
+    border: 1px solid #fafafa2a !important;;
+    backdrop-filter: blur(0.3rem) !important;;
+    color: white !important;
+
+  }
+  .cardImg{
+    padding: 1px !important;
+  }
+
+  .lista{
+   position: absolute;
+   width: 100% !important;
+  z-index: 2;
+  
+  
+  width: 63.3%; /* El div hijo toma el ancho del contenedor padre */
+ 
+  background-color: #ff0000; /* Color de fondo para demostración */
+  color: #fff; /* Color del texto para demostración */
+}
+
+.search{
+  position: relative;
+}
