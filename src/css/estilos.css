@@ -1,38 +1,20 @@
-.nav{
-    /* background: rgb(27,177,65);
-    background: linear-gradient(191deg, rgba(27,177,65,1) 1%, rgba(27,129,32,1) 100%); */
-    background-color: transparent;
 
-}
-.white{
-    color: white;
-}
-.white:hover{
-    color: white;
-}
 
-  .buscadorI{
-
-  }
-
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad (0.5) */
-    z-index: -1; /* Coloca la superposición detrás del contenido */
-  }
 
   .card{
     
-    background-color: #fafafa10!important;
-    border-radius: 1px !important;
-    border: 1px solid #fafafa2a !important;;
-    backdrop-filter: blur(0.3rem) !important;;
-    color: white !important;
+    background: #e9e7e710!important;
+    border-radius: 5px !important;
+    border: 1px solid #63626210 !important;;
+    backdrop-filter: blur(0.4rem) !important;;
+    color: rgb(53, 52, 52) !important;
+   
 
+  }
+  .cursiva{
+
+    letter-spacing: -1px;
+     
   }
   .cardImg{
     padding: 1px !important;
@@ -47,9 +29,65 @@
   width: 63.3%; /* El div hijo toma el ancho del contenedor padre */
  
   background-color: #ff0000; /* Color de fondo para demostración */
-  color: #fff; /* Color del texto para demostración */
+  color: #000000; /* Color del texto para demostración */
 }
 
 .search{
   position: relative;
 }
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #3dc23d;
+  animation: prixClipFix 2s linear infinite ;
+}
+
+@keyframes rotate {
+  100%   {transform: rotate(360deg)}
+}
+
+@keyframes prixClipFix {
+    0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+    25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+    50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+    75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+    100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+}
+
+.bg{
+ /*  top: 0;
+  left: 0;
+  z-index: -1;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+
+  background-image: url("https://us.123rf.com/450wm/iorpi/iorpi1305/iorpi130500080/19783189-naturaleza-ecolog%C3%ADa-abstracta-fondo-del-web-site.jpg");
+  background-size: cover;
+  background-position: center center; */
+ 
+
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Color negro semitransparente, ajusta el último valor para cambiar la opacidad */
+}
+

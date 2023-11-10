@@ -1,0 +1,55 @@
+{
+    "especies": [
+
+      {
+        "foto": "https://static.nationalgeographic.es/files/styles/image_3200/public/2273.600x450.jpg?w=1900&h=1425",
+        "nombre": "Monarca",
+        "nombre_cientifico": "Danaus plexippus",
+        "descripcion": "La mariposa monarca es conocida por su espectacular migración desde Canadá y Estados Unidos hasta los bosques de oyamel en México. Millones de monarcas se reúnen en México cada invierno."
+      },
+      {
+        "foto": "https://static.inaturalist.org/photos/158870136/original.jpeg",
+        "nombre": "Jaguar",
+        "nombre_cientifico": "Panthera onca",
+        "descripcion": "El jaguar es el mayor felino de América y un depredador en la cima de la cadena alimentaria. Es símbolo de fuerza y elegancia en la cultura mexicana."
+      },
+      {
+        "foto": "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/204090811/1800",
+        "nombre": "Quetzal",
+        "nombre_cientifico": "Pharomachrus mocinno",
+        "descripcion": "El quetzal es un ave colorida con una cola larga y es considerado un símbolo sagrado en la mitología maya. Habita en las selvas de América Central y México."
+      },
+      {
+        "foto": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Leatherback_sea_turtle_Tinglar%2C_USVI_%285839996547%29.jpg",
+        "nombre": "Tortuga Laúd",
+        "nombre_cientifico": "Dermochelys coriacea",
+        "descripcion": "La tortuga laúd es la más grande de todas las especies de tortugas marinas. Su caparazón único y su tamaño imponente la hacen fascinante para los biólogos marinos."
+      },
+      {
+        "foto": "https://static.wixstatic.com/media/fe4a4f_b69dcfe1351c415f8891f2450817680b~mv2.jpg/v1/fill/w_640,h_360,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/fe4a4f_b69dcfe1351c415f8891f2450817680b~mv2.jpg",
+        "nombre": "Axolote",
+        "nombre_cientifico": "Ambystoma mexicanum",
+        "descripcion": "El axolote es una salamandra endémica de México que conserva su capacidad de regeneración durante toda su vida, lo que lo convierte en un objeto de estudio en regeneración y biología del desarrollo."
+      },
+      {
+        "foto": "https://blog.dolphindiscovery.com.mx/wp-content/uploads/2021/07/datos-curiosos-vaquita-marina-1024x730.jpg",
+        "nombre": "Vaquita Marina",
+        "nombre_cientifico": "Phocoena sinus",
+        "descripcion": "La vaquita marina es una marsopa endémica del Golfo de California. Lamentablemente, se encuentra en peligro crítico de extinción debido a la pesca ilegal de totoaba."
+      },
+      {
+        "foto": "https://i.pinimg.com/736x/45/69/a6/4569a687eec9df471289af409903c0f7.jpg",
+        "nombre": "Aguililla de Harris",
+        "nombre_cientifico": "Parabuteo unicinctus",
+        "descripcion": "La aguililla de Harris es un ave rapaz que se encuentra en México y es conocida por su capacidad de vuelo y caza. Los biólogos la estudian para comprender su ecología."
+      },
+      {
+        "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Opossum_2.jpg/1200px-Opossum_2.jpg",
+        "nombre": "Tlacuache de Cola Gris",
+      "nombre_cientifico": "Didelphis virginiana",
+      "descripcion": "El Tlacuache de Cola Gris, también conocido como zarigüeya, es un marsupial que se encuentra en varias regiones de México. Es conocido por su cola prensil y su hábito de subir a los árboles en busca de alimento."
+      }
+        
+    ]
+  }
+  

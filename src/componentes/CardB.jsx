@@ -7,7 +7,7 @@ function CardB(props) {
   return (
     <Row xs={1} md={1} className="g-4">
       {props.data.results.especie.map((element, index) => (
-        <Col key={index}>
+        <Col className='shadow-lg' key={index}>
           <Card>
             <Caru  imagenes = {props.dataImg[index]} />
             
