@@ -11,6 +11,10 @@ import Caru from '../componentes/Caru';
 import InicioCard from '../componentes/InicioCard';
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom"
 import ModalFotos from '../componentes/ModalFotos.jsx';
+import Tensor from '../componentes/Tensor.jsx';
+import Navb from '../componentes/NavB'
+import Tf from '../componentes/Tf.jsx';
+
 
 
 
@@ -22,40 +26,45 @@ function Principal() {
   const [modal, setmodal] = useState(false);
 
   const fotos = (e) => {
- /*  console.log(e); */
-   setName(e);
-   setmodal(true);
+    /*  console.log(e); */
+    setName(e);
+    setmodal(true);
   }
-  
+
   return (
     <>
+{/*             <Tf /> 
+ */}
+      {/* <ConvertImage /> */}
+      <Navb />
+      {/* <Tensor /> */}
 
-{/* <NavB className='shadow-lg'/> */}
-<Container className='' fluid >
-  
-  <Row className="justify-content-center m-3">
-    <Col md="8">
-      
-      <Buscador fotos= {fotos} />
-      
-     
-      
-      </Col>
-   
-  </Row>
-  <Row className="justify-content-center m-3">
-    <Col md="19" className=' '>
-      <div className='mt-5'> 
-      <InicioCard/>
-      </div>
-      
-      </Col>
-   
-  </Row>
-</Container>
+      {/* <NavB className='shadow-lg'/> */}
+      <Container className='back' fluid >
+
+        <Row className="justify-content-center m-3">
+          <Col md="8">
+
+            <Buscador fotos={fotos} />
 
 
-{name != null && <ModalFotos nombre= {name} modalShow = {modal}  /> } 
+
+          </Col>
+
+        </Row>
+        <Row className="justify-content-center m-3">
+          <Col md="19" className=' '>
+            <div className='mt-5'>
+              <InicioCard />
+            </div>
+
+          </Col>
+
+        </Row>
+      </Container>
+
+
+      {name != null && <ModalFotos nombre={name} modalShow={modal} />}
 
 
     </>

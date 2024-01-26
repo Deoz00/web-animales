@@ -1,5 +1,8 @@
 export const helpHttp = () => {
+
+
     const customFetch = (endpoint,options) => { 
+        console.log(options.body)
         const defaultHeader ={
           /*   accept: "aplication/json", */
            /*  accept: "image/*", */
@@ -13,14 +16,17 @@ export const helpHttp = () => {
         options.headers =options.headers
         ?{...defaultHeader,...options.headers}:defaultHeader;
 
-        options.body = JSON.stringify(options.body) || false;
+        options.body = options.body || false;
+
         if (!options.body) {
             delete options.body;
+
         }
+
        // console.log(options);
         setTimeout(() => controller.abort(),3000);
 
-      
+
 
         return fetch(endpoint, options)
         .then((rest) =>

@@ -91,3 +91,7 @@
   background-color: rgba(0, 0, 0, 0.3); /* Color negro semitransparente, ajusta el último valor para cambiar la opacidad */
 }
 
+.dogVisionIMG {
+  width: 500px;
+  height: 500px;
+}

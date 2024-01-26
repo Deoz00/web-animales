@@ -10,10 +10,9 @@ import Datos from './Pages/Datos';
 
 
 
-
 function App() {
   
-
+ <navb/>
   return (
     
     <BrowserRouter>
