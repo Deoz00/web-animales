@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 //import './App.css'
 import '../css/estilos.css';
 
@@ -14,8 +14,8 @@ import ModalFotos from '../componentes/ModalFotos.jsx';
 import Tensor from '../componentes/Tensor.jsx';
 import Navb from '../componentes/NavB'
 import Tf from '../componentes/Tf.jsx';
-
-
+import { useModelContext } from '../context/ModelContext';
+import * as tf from '@tensorflow/tfjs';
 
 
 
@@ -24,6 +24,31 @@ function Principal() {
 
   const [name, setName] = useState(null);
   const [modal, setmodal] = useState(false);
+  const { model, setModel } = useModelContext();
+
+
+  useEffect(() => {
+    const cargarModelo = async () => {
+      try {
+      console.log("cargando modelo");
+        const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
+        setModel(modelo);
+        console.log(model);
+
+      } catch (error) {
+        console.error('Error al cargar el modelo:', error);
+      }
+    };
+
+    cargarModelo();
+  }, []);
+
+  useEffect(() => {
+    console.log(model);
+   }, [model]);
+
+
+
 
   const fotos = (e) => {
     /*  console.log(e); */
@@ -33,7 +58,7 @@ function Principal() {
 
   return (
     <>
-{/*             <Tf /> 
+      {/*             <Tf /> 
  */}
       {/* <ConvertImage /> */}
       <Navb />

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import * as tf from '@tensorflow/tfjs';
+import {useModelContext}  from '../context/ModelContext';
+
 
 
 const Tf = ({ img, loading }) => {
     const [predict, setPredict] = useState(null);
+    const { model, setModel } = useModelContext();
+
 
 
     /*  const breed = ['affenpinscher', 'afghan_hound', 'african_hunting_dog', 'airedale',
@@ -96,7 +100,7 @@ const Tf = ({ img, loading }) => {
             try {
 
                 //const model = await tf.loadGraphModel('modeljs/model.json');
-                const model = await tf.loadLayersModel('modeljs/modelo90%/data/model.json');
+               // const model = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
 
                 tf.engine().startScope(); // Iniciar un nuevo ámbito de memoria
 
@@ -114,26 +118,26 @@ const Tf = ({ img, loading }) => {
                     let predict12 = model.predict(tensor)
                     const predictionsArray = predict12.dataSync();
                     const maxIndex = predictionsArray.indexOf(Math.max(...predictionsArray));
-                    console.log("memory1: ", tf.memory());
                     setPredict([breed[maxIndex], predictionsArray[maxIndex]]);
                     tensor.dispose();
                     predict12.dispose();
-                    console.log("memory2: ", tf.memory());
 
 
                 });
 
-                model.dispose();
-                tf.disposeVariables(); // Liberar todas las variables
+              //  model.dispose();
+              // tf.disposeVariables(); // Liberar todas las variables
                 tf.webgl.forceHalfFloat(); // Otras opciones disponibles: forceFloat16, forceFloat32, etc.
                 tf.dispose();
 
                 loading();
 
 
+
             } catch (error) {
                 console.error('Error al cargar la imagen:', error);
             } finally {
+
                 tf.engine().endScope(); // Finalizar el ámbito de memoria
 
             }

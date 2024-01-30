@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect, useContext  } from 'react';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import { Button } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import Row from 'react-bootstrap/Row';
-import "../css/estilos.css"
+import '../css/estilos.css';
 import Tf from './Tf';
+import * as tf from '@tensorflow/tfjs';
+import {useModelContext}  from '../context/ModelContext';
+
 
 
 
@@ -17,7 +20,24 @@ const Dogvision = () => {
     const [isLoading, setLoading] = useState(false);
     const [imgPedict, setImgPedict] = useState(false);
 
+    const { model, setModel } = useModelContext();
 
+/* 
+    useEffect(() => {
+        const cargarModelo = async () => {
+            console.log(miVariable);
+          try {
+            const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
+            setModel(modelo);
+          } catch (error) {
+            console.error('Error al cargar el modelo:', error);
+          }
+        };
+    
+        cargarModelo();
+      }, []);
+ */
+     
 
     // Manejar cambios en el campo de archivo (input type="file")
     const handleImageChange = (e) => {
@@ -67,7 +87,14 @@ const Dogvision = () => {
 
     return (
         <>
-            <Container fluid="sm" className="d-flex flex-column align-items-center justify-content-center">
+     
+        {model == null && <Container fluid="sm" className="d-flex flex-column align-items-center justify-content-center">
+            
+        <span className="loader m-auto mt-4 mb-4 fluid"></span>
+        </Container>}
+
+
+            {model && <Container fluid="sm" className="d-flex flex-column align-items-center justify-content-center">
                 <Row className='w-50'>
                     < Col className="d-flex justify-content-center">
                         <Form.Group controlId="formFile w-100" className="mb-3">
@@ -114,7 +141,7 @@ const Dogvision = () => {
                 </Row>
 
 
-            </Container>
+            </Container>}
 
 
         </>

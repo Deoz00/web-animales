@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes, Link, Navigate, useParams } from "react-r
 import './Pages/Principal'
 import Principal from './Pages/Principal';
 import Datos from './Pages/Datos';
+import { ModelContextProvider } from './context/ModelContext';
 
 
 
@@ -14,9 +15,11 @@ function App() {
   
  <navb/>
   return (
+
+    
     
     <BrowserRouter>
-   
+   <ModelContextProvider>
       <Routes>
         <Route path= "/" element= { <Principal/> } />
         <Route path= "/inicio" element= { <h1>inicio</h1> } />
@@ -24,6 +27,9 @@ function App() {
 
         <Route path= "*" element= { <Navigate to="/" /> } />
       </Routes>
+      </ModelContextProvider>
+
+
     </BrowserRouter>
 
   )
