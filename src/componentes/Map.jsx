@@ -12,6 +12,12 @@ function Map({ marker }) {
 
     const [photo, setPhoto] = useState(null);
 
+    const icon = L.icon({
+        iconUrl: "/marker-icon.png",
+        iconSize: [30, 30], // Tamaño del icono
+        iconAnchor: [15, 15], // Punto de anclaje del icono (la punta)
+      });
+
 
 
     const modalClose = () => {
@@ -46,7 +52,7 @@ function Map({ marker }) {
                 {marks.map((coordinates, index) => (
 
 
-                    <Marker key={index} position={[coordinates.m.geojson.coordinates[1], coordinates.m.geojson.coordinates[0]]} eventHandlers={{
+                    <Marker key={index} position={[coordinates.m.geojson.coordinates[1], coordinates.m.geojson.coordinates[0]]} icon={icon} eventHandlers={{
                         click: () => {
                             console.log(coordinates.m);
                             setPhoto(coordinates.m.photos);
