@@ -16,6 +16,8 @@ import Navb from '../componentes/NavB'
 import Tf from '../componentes/Tf.jsx';
 import { useModelContext } from '../context/ModelContext';
 import * as tf from '@tensorflow/tfjs';
+import cheerio from 'cheerio';
+
 
 
 
@@ -26,12 +28,15 @@ function Principal() {
   const [modal, setmodal] = useState(false);
   const { model, setModel } = useModelContext();
 
-
+/* 
   useEffect(() => {
     const cargarModelo = async () => {
+
+
       try {
-      console.log("cargando modelo");
-        const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
+        console.log("cargando modelo");
+        // const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
+        const modelo = await tf.loadLayersModel('model/model.json');
         setModel(modelo);
         console.log(model);
 
@@ -45,32 +50,28 @@ function Principal() {
 
   useEffect(() => {
     console.log(model);
-   }, [model]);
+  }, [model]); */
 
 
 
 
-  const fotos = (e) => {
-    /*  console.log(e); */
-    setName(e);
-    setmodal(true);
-  }
 
+
+
+  
   return (
     <>
-      {/*             <Tf /> 
- */}
-      {/* <ConvertImage /> */}
+     
       <Navb />
-      {/* <Tensor /> */}
-
-      {/* <NavB className='shadow-lg'/> */}
+     
       <Container className='back' fluid >
 
         <Row className="justify-content-center m-3">
           <Col md="8">
+            <h4 className="text-secondary text-center"> Busca entre más de 114 mil especies válidas o aceptadas y su sinonimia</h4>
 
-            <Buscador fotos={fotos} />
+
+            <Buscador />
 
 
 
@@ -89,7 +90,7 @@ function Principal() {
       </Container>
 
 
-      {name != null && <ModalFotos nombre={name} modalShow={modal} />}
+      {/* {name != null && <ModalFotos nombre={name} modalShow={modal} />} */}
 
 
     </>

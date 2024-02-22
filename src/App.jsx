@@ -4,9 +4,8 @@ import { BrowserRouter, Route, Routes, Link, Navigate, useParams } from "react-r
 /* import './css/estilos.css'; */
 import './Pages/Principal'
 import Principal from './Pages/Principal';
-import Datos from './Pages/Datos';
 import { ModelContextProvider } from './context/ModelContext';
-
+import Informacion from './Pages/informacion';
 
 
 
@@ -23,7 +22,7 @@ function App() {
       <Routes>
         <Route path= "/" element= { <Principal/> } />
         <Route path= "/inicio" element= { <h1>inicio</h1> } />
-        <Route path= "/especie/:id" element= { <Datos/> }  />
+        <Route path= "/especie/:id" element= { <Informacion/> }  />
 
         <Route path= "*" element= { <Navigate to="/" /> } />
       </Routes>

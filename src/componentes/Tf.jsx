@@ -111,12 +111,15 @@ const Tf = ({ img, loading }) => {
                     //const imagenRedimensionada = tf.image.resizeBilinear(tensor, [224, 224]);
                     tensor = tensor.div(tf.scalar(255));
                     tensor = tensor.expandDims();
+                    console.log(tensor.shape)
 
 
 
 
                     let predict12 = model.predict(tensor)
                     const predictionsArray = predict12.dataSync();
+
+                    console.log(predictionsArray);
                     const maxIndex = predictionsArray.indexOf(Math.max(...predictionsArray));
                     setPredict([breed[maxIndex], predictionsArray[maxIndex]]);
                     tensor.dispose();
@@ -151,7 +154,7 @@ const Tf = ({ img, loading }) => {
 
     return (
         <div>
-            {predict && <h2>{predict[0]}</h2>}
+            {predict && <h2>{predict[0]} {predict[1]} </h2>}
         </div>
     );
 };

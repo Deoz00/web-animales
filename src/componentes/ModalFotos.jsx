@@ -11,53 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function ModalFotos({ nombre, modalShow }) {
-  const [show, setShow] = useState(false);
+function ModalFotos({ fotos, mclose }) {
+  const [show, setShow] = useState(true);
   const [loading, setLoading] = useState(true);
 
   const handleClose = () => {
     setShow(false);
-    setData(null);
+    mclose();
   };
   const handleShow = () => setShow(true);
-
-  const [data, setData] = useState(null);
-
-
-
-  useEffect(() => {
-
-
-
-
-    const fetchData = async () => {
-
-      setShow(modalShow);
-      setLoading(true);
-      const url = 'https://api.inaturalist.org/v1/taxa/autocomplete?q=' + nombre;
-      const url2 = 'https://api.inaturalist.org/v1/taxa/';
-
-
-      helpHttp().get(url).then(async (result) => {
-       
-
-        const fetch = await helpHttp().get(url2 + result.results[0].id)
-        setData(fetch.results[0]);
-    
-
-        setTimeout(() => {
-         
-          setLoading(false);
-        }, 2000);
-
-      });
-
-    }
-
-    fetchData();
-  }, [nombre]);
-
-
 
 
 
@@ -67,33 +29,31 @@ function ModalFotos({ nombre, modalShow }) {
 
     <>
       
-      {data && <Modal size="lg" show={show} onHide={handleClose}>
+      <Modal size="lg" show={show} onHide={handleClose}>
         <Modal.Header  closeButton>
-          <Modal.Title  >  <i className='cursiva'> {data.name} </i>  </Modal.Title>
+          <Modal.Title  > Observations   </Modal.Title>
         </Modal.Header>
-        {loading && <span className="loader m-auto mt-4 mb-4"></span>}
-        {!loading && <Modal.Body>
+        <Modal.Body>
 
-          <Container>
-            <Row>
+          <Container fluid >
+          <Row className="justify-content-center">
+        <Col className="text-center">
 
-              <Col md={12}>
-
-                {data.taxon_photos.map((e, i) => (
-                  <Image key={i} src={e.photo.original_url} thumbnail />
+                {fotos.map((e, i) => (
+                  <Image key={i} src={e.url.replace(/square/g, "original")} thumbnail style={{ width: '360px', height: '300px', marginBottom: '10px' }} />
                 ))}
 
               </Col>
             </Row>
           </Container>
 
-        </Modal.Body>}
+        </Modal.Body>
 
         <Modal.Footer>
-          {data.id}
+         
         </Modal.Footer>
       </Modal>
-      }
+      
     </>
   );
 }

@@ -2,7 +2,6 @@ export const helpHttp = () => {
 
 
     const customFetch = (endpoint,options) => { 
-        console.log(options.body)
         const defaultHeader ={
           /*   accept: "aplication/json", */
            /*  accept: "image/*", */

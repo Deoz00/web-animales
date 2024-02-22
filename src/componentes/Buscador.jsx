@@ -28,9 +28,12 @@ export default function Buscador( {fotos} ) {
 
         const fetchData = async () => {
 
-            const url = 'https://api.enciclovida.mx/autocompleta/especies/' + form.name;
+            //const url = 'https://api.enciclovida.mx/autocompleta/especies/' + form.name;
+            const url = `https://api.inaturalist.org/v1/taxa/autocomplete?q=${form.name}&rank=species`;
             const fetch = await helpHttp().get(url);
-           
+
+            console.log(fetch)
+            
 
             if (fetch.term === "undefined") {
                 setData(null);
@@ -99,7 +102,7 @@ export default function Buscador( {fotos} ) {
             
                
                 
-                    <h4 className="text-secondary"> Busca entre más de 114 mil especies válidas o aceptadas y su sinonimia</h4>
+                    {/* <h4 className="text-secondary"> Busca entre más de 114 mil especies válidas o aceptadas y su sinonimia</h4> */}
                     <input
                         ref={inputRef}
                         type="text"
@@ -113,7 +116,7 @@ export default function Buscador( {fotos} ) {
                         className="form-control rounded-pill  border-2 border-success form-control-lg shadow-sm"
                     />
                     <div ref={listaRef}>
-                    {data && inputFocus && <BuscadorLista  data = {data} fotos= {fotos}  />} 
+                    {data && inputFocus && <BuscadorLista  data = {data}   />} 
                     </div>
                      
                   
