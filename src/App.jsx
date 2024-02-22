@@ -5,8 +5,7 @@ import { BrowserRouter, Route, Routes, Link, Navigate, useParams } from "react-r
 import './Pages/Principal'
 import Principal from './Pages/Principal';
 import { ModelContextProvider } from './context/ModelContext';
-import Informacion from './Pages/informacion';
-
+import Info from './Pages/Info';
 
 
 
@@ -22,7 +21,7 @@ function App() {
       <Routes>
         <Route path= "/" element= { <Principal/> } />
         <Route path= "/inicio" element= { <h1>inicio</h1> } />
-        <Route path= "/especie/:id" element= { <Informacion/> }  />
+        <Route path= "/especie/:id" element= { <Info/> }  />
 
         <Route path= "*" element= { <Navigate to="/" /> } />
       </Routes>
