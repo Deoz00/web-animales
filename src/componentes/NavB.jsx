@@ -6,31 +6,33 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Buscador from '../componentes/Buscador.jsx'
 import { Link } from 'react-router-dom';
-
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function NavB({ search }) {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Link to={"/"}>
-          <Navbar.Brand className='ms-2' >A</Navbar.Brand>
-        </Link>
+    <Navbar expand="lg" className="bg-body-tertiary p-0">
+      <Container fluid className=''>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-          </Nav>
+        <Col xs="2">
+          <Link to={"/"}>
+            <Navbar.Brand className='ms-2' >A</Navbar.Brand>
+          </Link>
 
 
-          {search && <div className='ms-4 m-auto  w-50 pt-3'> {/* Mueve el div a la derecha */}
+
+        </Col>
+
+
+
+
+        <Col xs="10">
+
+          {search && <div className='m-2  p-0 w-75'> {/* Mueve el div a la derecha */}
             <Buscador />
           </div>}
 
-        </Navbar.Collapse>
+        </Col>
 
 
       </Container>

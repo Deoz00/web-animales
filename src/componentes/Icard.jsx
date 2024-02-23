@@ -10,7 +10,7 @@ function Icard( {foto, nombre, nombre_cientifico, descripcion} ) {
             <Card.Img  width={200} height={300} className='cardImg shadow-sm' variant="top" src={foto} />
             <Card.Body > 
               <Card.Title style={{  overflow: 'hidden' }}> {nombre}  ( <i className='cursiva'>{nombre_cientifico}</i>) </Card.Title>
-              <Card.Text style={{height: '200px' }} >
+              <Card.Text style={{height: '110px' }} >
                 {descripcion}
               </Card.Text>
             </Card.Body>

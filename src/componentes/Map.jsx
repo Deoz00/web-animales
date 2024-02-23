@@ -54,9 +54,7 @@ function Map({ marker }) {
 
                     <Marker key={index} position={[coordinates.m.geojson.coordinates[1], coordinates.m.geojson.coordinates[0]]} icon={icon} eventHandlers={{
                         click: () => {
-                            console.log(coordinates.m);
                             setPhoto(coordinates.m.photos);
-
                         },
                     }} >
 

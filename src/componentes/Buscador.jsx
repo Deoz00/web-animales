@@ -113,7 +113,7 @@ export default function Buscador( {fotos} ) {
                         onChange={handleChange}
                         onFocus={handleFocus}
                        
-                        className="form-control rounded-pill  border-2 border-success form-control-lg shadow-sm"
+                        className="form-control rounded-pill  border-2 border-secondary form-control-lg shadow-sm"
                     />
                     <div ref={listaRef}>
                     {data && inputFocus && <BuscadorLista  data = {data}   />} 
@@ -125,7 +125,7 @@ export default function Buscador( {fotos} ) {
 
             
              
-            <br />
+           
             {data && dataImg && (
                 
                 <CardB data={data} dataImg={dataImg} />

@@ -62,7 +62,7 @@ function Principal() {
   return (
     <>
      
-      <Navb />
+      {/* <Navb /> */}
      
       <Container className='back' fluid >
 
