@@ -15,7 +15,7 @@ function InicioCard() {
   return (
 
 
-    <Row xs={1} md={4} className="g-4">
+    <Row xs={1} sm={2}  xl={3} xxl={4} className="g-4">
       {especies.especies.map((especies, index) => (
 
 

@@ -66,20 +66,7 @@
     100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
 }
 
-.bg{
- /*  top: 0;
-  left: 0;
-  z-index: -1;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
 
-  background-image: url("https://us.123rf.com/450wm/iorpi/iorpi1305/iorpi130500080/19783189-naturaleza-ecolog%C3%ADa-abstracta-fondo-del-web-site.jpg");
-  background-size: cover;
-  background-position: center center; */
- 
-
-}
 
 
 .overlay {
@@ -123,4 +110,25 @@
 .overflow-y::-webkit-scrollbar-thumb {
   background-color: gray; /* Color de la scrollbar */
   border-radius: 10px; /* Borde redondeado */
+}
+
+
+
+
+
+.concepto {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.relacion {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.conector {
+  margin: 0 10px;
 }

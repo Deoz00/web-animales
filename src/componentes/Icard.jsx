@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Icard( {foto, nombre, nombre_cientifico, descripcion} ) {
   return (
     <Card className='icard shadow-sm' >
-            <Card.Img  width={200} height={300} className='cardImg shadow-sm' variant="top" src={foto} />
+            <Card.Img  width={300} height={250} className='cardImg shadow-sm' variant="top" src={foto}     alt={nombre} />
             <Card.Body > 
               <Card.Title style={{  overflow: 'hidden' }}> {nombre}  ( <i className='cursiva'>{nombre_cientifico}</i>) </Card.Title>
               <Card.Text style={{height: '110px' }} >

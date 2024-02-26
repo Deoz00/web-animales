@@ -16,7 +16,8 @@ import Navb from '../componentes/NavB'
 import Tf from '../componentes/Tf.jsx';
 import { useModelContext } from '../context/ModelContext';
 import * as tf from '@tensorflow/tfjs';
-import cheerio from 'cheerio';
+import { Helmet } from 'react-helmet';
+
 
 
 
@@ -28,42 +29,48 @@ function Principal() {
   const [modal, setmodal] = useState(false);
   const { model, setModel } = useModelContext();
 
-/* 
-  useEffect(() => {
-    const cargarModelo = async () => {
-
-
-      try {
-        console.log("cargando modelo");
-        // const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
-        const modelo = await tf.loadLayersModel('model/model.json');
-        setModel(modelo);
-        console.log(model);
-
-      } catch (error) {
-        console.error('Error al cargar el modelo:', error);
-      }
-    };
-
-    cargarModelo();
-  }, []);
-
-  useEffect(() => {
-    console.log(model);
-  }, [model]); */
-
-
-
-
-
-
-
+  /* 
+    useEffect(() => {
+      const cargarModelo = async () => {
   
+  
+        try {
+          console.log("cargando modelo");
+          // const modelo = await tf.loadLayersModel('modeljs/modelo90/data/model.json');
+          const modelo = await tf.loadLayersModel('model/model.json');
+          setModel(modelo);
+          console.log(model);
+  
+        } catch (error) {
+          console.error('Error al cargar el modelo:', error);
+        }
+      };
+  
+      cargarModelo();
+    }, []);
+  
+    useEffect(() => {
+      console.log(model);
+    }, [model]); */
+
+
+
+
+
+
+
+
   return (
     <>
-     
+
+      <Helmet>
+        <title>Diversidad Biológica: Información Útil sobre Animales y Plantas</title>
+        <meta name="description" content="Descubre datos interesantes sobre animales y plantas. Encuentra información sobre sus hábitats. ¡Empieza tu búsqueda ahora!"/>
+
+      </Helmet>
+
       {/* <Navb /> */}
-     
+
       <Container className='back' fluid >
 
         <Row className="justify-content-center m-3">
@@ -79,7 +86,7 @@ function Principal() {
 
         </Row>
         <Row className="justify-content-center m-3">
-          <Col md="19" className=' '>
+          <Col  className=' '>
             <div className='mt-5'>
               <InicioCard />
             </div>

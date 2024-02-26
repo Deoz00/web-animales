@@ -29,10 +29,9 @@ export default function Buscador( {fotos} ) {
         const fetchData = async () => {
 
             //const url = 'https://api.enciclovida.mx/autocompleta/especies/' + form.name;
-            const url = `https://api.inaturalist.org/v1/taxa/autocomplete?q=${form.name}&rank=species`;
+            const url = `https://api.inaturalist.org/v1/taxa/autocomplete?q=${form.name}&rank=species&locale=es`;
             const fetch = await helpHttp().get(url);
 
-            console.log(fetch)
             
 
             if (fetch.term === "undefined") {
@@ -90,8 +89,8 @@ export default function Buscador( {fotos} ) {
         
     };
 
-    const handleFocus = () => {
-        setInputFocus(true);
+    const handleFocus = (e) => {
+        setInputFocus(e);
       };
 
     
@@ -111,12 +110,12 @@ export default function Buscador( {fotos} ) {
                         value={form.name}
                         placeholder="Buscar por nombre común o cientifico"
                         onChange={handleChange}
-                        onFocus={handleFocus}
+                        onFocus={() => handleFocus(true)}
                        
                         className="form-control rounded-pill  border-2 border-secondary form-control-lg shadow-sm"
                     />
                     <div ref={listaRef}>
-                    {data && inputFocus && <BuscadorLista  data = {data}   />} 
+                    {data && inputFocus && <BuscadorLista  data = {data} handleFocus={handleFocus}  />} 
                     </div>
                      
                   
