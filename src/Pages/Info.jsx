@@ -15,7 +15,11 @@ import cheerio from 'cheerio';
 import Map from '../componentes/Map.jsx';
 import { Helmet } from 'react-helmet';
 import { Concepto, Relacion } from "../componentes/Cuadro.jsx";
+import { useModelContext } from '../context/ModelContext';
+import Dinasty from "../componentes/dinasty.jsx";
 
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 
 
@@ -25,6 +29,11 @@ function Info() {
   const [dataWiki, setDataWiki] = useState(null);
   const [observations, setObservations] = useState(null);
   const [loadedImages, setLoadedImages] = useState({});
+
+  const { idf, setIdf } = useModelContext();
+  const [key, setKey] = useState('Dinastia');
+
+
 
   const handleImageLoad = index => {
     setLoadedImages(prevState => ({
@@ -58,8 +67,13 @@ function Info() {
 
         setData(fetch.results[0]);
 
+        //console.log(fetch.results[0])
+        setIdf(fetch.results[0].ancestor_ids[fetch.results[0].ancestor_ids.length - 2])
+
+
+
         // Wikipedia
-     //   const wikipediaUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${fetch.results[0].wikipedia_url.split('/').reverse()[0]}&origin=*`;
+        //   const wikipediaUrl = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${fetch.results[0].wikipedia_url.split('/').reverse()[0]}&origin=*`;
         const wikipediaUrl = `https://es.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=1&srsearch=${fetch.results[0].name}`;
         return helpHttp().get(wikipediaUrl);
       }).then(async (wikipediaData) => {
@@ -92,12 +106,12 @@ function Info() {
       setObservations(observations.results);
 
 
-     /*  const response2 = await fetch('https://api.inaturalist.org/v1/taxa?taxon_id=41962&order=asc&order_by=created_at');
-    
-
-      const data2 = await response2.json(); */
-
+      /*  const response2 = await fetch('https://api.inaturalist.org/v1/taxa?taxon_id=41962&order=asc&order_by=created_at');
      
+ 
+       const data2 = await response2.json(); */
+
+
     }
 
 
@@ -165,7 +179,35 @@ function Info() {
         </Row>
 
 
-        {observations && <Map marker={observations} />}
+        <Row className=" m-2 shadow ms-4 me-4 mb-4">
+
+          <Col md="12">
+
+
+            <Tabs
+              id="controlled-tab-example"
+              activeKey={key}
+              onSelect={(k) => setKey(k)}
+              className=" m-2 ms-4 me-4"
+            >
+              <Tab eventKey="Dinastia" title="Dinastía" className=" m-2 ms-4 me-4 ">
+                <Dinasty />
+              </Tab>
+              <Tab eventKey="Mapa" title="Mapa" className=" ms-4 me-4 mb-3">
+                {key == "Mapa" && observations && <Map marker={observations} />}
+              </Tab>
+
+            </Tabs>
+          </Col>
+
+
+        </Row>
+
+
+
+
+
+
 
 
 
