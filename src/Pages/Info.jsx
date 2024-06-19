@@ -16,7 +16,7 @@ import Map from '../componentes/Map.jsx';
 import { Helmet } from 'react-helmet';
 import { Concepto, Relacion } from "../componentes/Cuadro.jsx";
 import { useModelContext } from '../context/ModelContext';
-import Dinasty from "../componentes/dinasty.jsx";
+import Dinasty from "../componentes/Dinasty.jsx";
 
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
